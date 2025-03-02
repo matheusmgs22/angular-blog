@@ -48,4 +48,3 @@ Este projeto foi desenvolvido como parte do bootcamp **Decola Tech 2025**, reali
 O projeto serviu como uma excelente oportunidade para aprimorar conhecimentos sobre **componentização**, **roteamento** e a construção de interfaces dinâmicas utilizando **Angular**. Além disso, permitiu uma melhor compreensão sobre a importância de uma arquitetura bem definida para facilitar a escalabilidade e manutenção do código.
 
 Com isso, o blog de notícias de tecnologia não apenas entrega uma interface responsiva e moderna, mas também representa um importante aprendizado no uso do **framework Angular**.
-=======
