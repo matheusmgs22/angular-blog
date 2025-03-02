@@ -1,59 +1,50 @@
-# AngularBlog
+# Blog de Notícias de Tecnologia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Este é um projeto Angular criado com o intuito de aprender sobre components. Exibe um blog pessoal com notícias e tendências do universo da tecnologia. O blog apresenta uma interface moderna e responsiva, com seções de "Big Cards" para destaques e "Small Cards" para outras notícias.
 
-## Development server
+## Tecnologias Utilizadas
 
-To start a local development server, run:
+- **Angular**: Framework principal para a construção da aplicação.
+- **TypeScript**: Linguagem utilizada para o desenvolvimento.
+- **CSS**: Estilização dos componentes.
+- Outras bibliotecas e ferramentas que auxiliam no desenvolvimento (ex: Angular CLI).
 
-```bash
-ng serve
-```
+### Home
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A home page organizada em duas seções principais:
+- **Artigos Principais (Big Cards):** Uma área dedicada aos destaques, onde cada card exibe uma imagem, título e descrição de uma notícia importante.
+- **Outros Artigos (Small Cards):** Uma área que lista notícias secundárias em um formato mais compacto, com imagem e título.
 
-## Code scaffolding
+Cada componente de card utiliza o Angular Router para permitir a navegação para uma página de conteúdo detalhado ao clicar no título ou imagem.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+![Home-page](./src/assets/img/image-geral-blog.png)
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Big Card
 
-```bash
-ng generate --help
-```
+O componente **Big Card** é projetado para destacar as notícias mais relevantes. Ele exibe:
+- **Imagem de Capa:** Uma imagem ilustrativa que representa a notícia.
+- **Título:** O título da notícia, que é clicável e redireciona para a página de conteúdo detalhado.
+- **Descrição:** Um breve resumo da notícia, também clicável para acessar mais detalhes.
 
-## Building
 
-To build the project run:
+![Big-card](./src/assets/img/big-card-image.png)
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Small Card
 
-## Running unit tests
+O componente **Small Card** apresenta as notícias secundárias de forma mais compacta. Ele contém:
+- **Imagem de Capa:** Uma imagem representativa da notícia.
+- **Título:** O título da notícia, clicável e direcionado à página de detalhes do conteúdo.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+![small-card](./src/assets/img/small-card-image.png)
 
-```bash
-ng test
-```
+## Conclusão
 
-## Running end-to-end tests
+Este projeto foi desenvolvido como parte do bootcamp **Decola Tech 2025**, realizado pela **DIO.me** em parceria com a **Avanade**. Durante o desenvolvimento, foram aplicados conceitos fundamentais do **Angular**, com foco na criação e reutilização de **componentes**, estruturação de uma aplicação modular e boas práticas de desenvolvimento front-end.
 
-For end-to-end (e2e) testing, run:
+O projeto serviu como uma excelente oportunidade para aprimorar conhecimentos sobre **componentização**, **roteamento** e a construção de interfaces dinâmicas utilizando **Angular**. Além disso, permitiu uma melhor compreensão sobre a importância de uma arquitetura bem definida para facilitar a escalabilidade e manutenção do código.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Com isso, o blog de notícias de tecnologia não apenas entrega uma interface responsiva e moderna, mas também representa um importante aprendizado no uso do **framework Angular**.
