@@ -3,17 +3,22 @@ import { MenuTitleComponent } from "../../components/menu-title/menu-title.compo
 import { BigCardComponent } from "../../components/big-card/big-card.component";
 import { SmallCardComponent } from "../../components/small-card/small-card.component";
 import { MenuBarComponent } from "../../components/menu-bar/menu-bar.component";
-
+import { dataFake } from '../../data/dataFake';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
-  imports: [MenuTitleComponent, BigCardComponent, SmallCardComponent, MenuBarComponent],
+  imports: [MenuTitleComponent, BigCardComponent, SmallCardComponent, MenuBarComponent, CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
+
+  bigCards: any[] = [];
+  smallCards: any[] = [];
 
   ngOnInit(): void {
-
+    // Populando as listas de bigCards e smallCards com os dados de dataFake
+    this.bigCards = dataFake.bigCards;
+    this.smallCards = dataFake.smallCards;
   }
-
 }

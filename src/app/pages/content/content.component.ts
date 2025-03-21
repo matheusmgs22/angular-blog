@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { dataFake } from '../../data/dataFake';
 
 @Component({
   selector: 'app-content',
+  imports: [RouterModule],
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
@@ -12,11 +13,16 @@ export class ContentComponent implements OnInit {
   photoCover: string = '';
   contentTitle: string = '';
   contentDescription: string = '';
+  contentText: string = '';
   private id: string | null = '0';
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+
     this.route.paramMap.subscribe(value => {
       this.id = value.get('id');
       if (this.id) {
@@ -26,21 +32,31 @@ export class ContentComponent implements OnInit {
   }
 
   setValuesToComponent(id: string | null): void {
-    // Procurar nas duas listas de cards
-    const resultBigCard = dataFake.bigCards.find(article => article.Id.toString() === id);
-    const resultSmallCard = dataFake.smallCards.find(article => article.Id.toString() === id);
 
-    // Se o card for encontrado entre os bigCards
+    const resultBigCard = dataFake.bigCards.find(article => {
+      return article.Id?.toString() === id;
+    });
+
+    const resultSmallCard = dataFake.smallCards.find(article => {
+      return article.Id?.toString() === id;
+    });
+
     if (resultBigCard) {
       this.contentTitle = resultBigCard.cardTitle;
       this.contentDescription = resultBigCard.cardDescription;
       this.photoCover = resultBigCard.photoCover;
+      this.contentText = resultBigCard.contentText;
     }
-    // Se o card for encontrado entre os smallCards
+
     else if (resultSmallCard) {
       this.contentTitle = resultSmallCard.cardTitle;
-      this.contentDescription = '';  // Se você não tiver uma descrição para small cards, deixe vazio ou crie um fallback
+      this.contentDescription = '';  // Se não tiver uma descrição para small cards
       this.photoCover = resultSmallCard.photoCover;
+      this.contentText = resultSmallCard.contentText;
     }
+  }
+
+  goBack(): void {
+    this.router.navigate(['/']);  // Navega para a home
   }
 }

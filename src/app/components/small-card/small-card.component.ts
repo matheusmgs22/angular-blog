@@ -7,16 +7,9 @@ import { RouterModule } from '@angular/router';
   templateUrl: './small-card.component.html',
   styleUrl: './small-card.component.css'
 })
-export class SmallCardComponent implements OnInit {
 
-    @Input()
-    photoCover:string ="";
-    @Input()
-    cardTitle:string ="";
-    @Input()
-    Id:string="0";
-
-    ngOnInit(): void {
-
-    }
+export class SmallCardComponent {
+  @Input() Id!: number;
+  @Input() cardTitle!: string;
+  @Input() photoCover!: string;
 }

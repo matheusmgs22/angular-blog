@@ -7,19 +7,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './big-card.component.html',
   styleUrl: './big-card.component.css'
 })
-export class BigCardComponent implements OnInit {
 
-    @Input()
-    photoCover: string = "";
-    @Input()
-    cardTitle: string ="";
-    @Input()
-    cardDescription: string="";
-    @Input()
-    Id:string="0";
-
-    ngOnInit(): void {
-
-    }
-
+export class BigCardComponent {
+  @Input() Id!: number;
+  @Input() cardTitle!: string;
+  @Input() cardDescription!: string;
+  @Input() photoCover!: string;
 }
