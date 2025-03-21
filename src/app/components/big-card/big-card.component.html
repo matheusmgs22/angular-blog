@@ -1,13 +1,16 @@
 <div class="container__big-card">
 
+    <a [routerLink]="['content', Id]" >
     <div class="big-card__photo">
         <img
+
              src="{{photoCover}}"
              alt="Imagem Placeholder"
              height="200px"
              width="300px"
              >
     </div>
+    </a>
 
     <div class="big-card__title">
         <h1><a [routerLink]="['content', Id]" >{{ cardTitle }}</a></h1>
