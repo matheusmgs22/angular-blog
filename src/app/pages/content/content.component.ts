@@ -1,41 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {dataFake} from '../../data/dataFake';
+import { dataFake } from '../../data/dataFake';
 
 @Component({
   selector: 'app-content',
-  imports: [],
   templateUrl: './content.component.html',
-  styleUrl: './content.component.css'
+  styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
 
-    photoCover:string=""
-    contentTitle:string=""
-    contentDescription:string=""
-    private id:string | null ="0"
+  photoCover: string = '';
+  contentTitle: string = '';
+  contentDescription: string = '';
+  private id: string | null = '0';
 
-    constructor(
-      private route:ActivatedRoute
-    ){
+  constructor(private route: ActivatedRoute) { }
 
-    }
-
-    ngOnInit(): void {
-      this.route.paramMap.subscribe( value => {
-
-        this.id = value.get("id");
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(value => {
+      this.id = value.get('id');
+      if (this.id) {
         this.setValuesToComponent(this.id);
-      });
+      }
+    });
+  }
 
+  setValuesToComponent(id: string | null): void {
+    // Procurar nas duas listas de cards
+    const resultBigCard = dataFake.bigCards.find(article => article.Id.toString() === id);
+    const resultSmallCard = dataFake.smallCards.find(article => article.Id.toString() === id);
+
+    // Se o card for encontrado entre os bigCards
+    if (resultBigCard) {
+      this.contentTitle = resultBigCard.cardTitle;
+      this.contentDescription = resultBigCard.cardDescription;
+      this.photoCover = resultBigCard.photoCover;
     }
-
-    setValuesToComponent(id:string | null){
-        const result = dataFake.filter(article => article.id == id)[0]
-
-       this.contentTitle = result.title
-       this.contentDescription = result.description
-       this.photoCover = result.photoCover
+    // Se o card for encontrado entre os smallCards
+    else if (resultSmallCard) {
+      this.contentTitle = resultSmallCard.cardTitle;
+      this.contentDescription = '';  // Se você não tiver uma descrição para small cards, deixe vazio ou crie um fallback
+      this.photoCover = resultSmallCard.photoCover;
     }
-
+  }
 }
