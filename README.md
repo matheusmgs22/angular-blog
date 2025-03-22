@@ -17,7 +17,7 @@ A home page organizada em duas seções principais:
 
 Cada componente de card utiliza o Angular Router para permitir a navegação para uma página de conteúdo detalhado ao clicar no título ou imagem.
 
-![Home-page](./src/assets/img/image-geral-blog.png)
+![Home-page](./src/assets/img/blog_tec_home.png)
 
 ---
 
@@ -39,7 +39,7 @@ O componente **Small Card** apresenta as notícias secundárias de forma mais co
 - **Imagem de Capa:** Uma imagem representativa da notícia.
 - **Título:** O título da notícia, clicável e direcionado à página de detalhes do conteúdo.
 
-![small-card](./src/assets/img/small-card-image.png)
+![small-card](./src/assets/img/small_card_blog.png)
 
 ## Conclusão
 
